@@ -2,14 +2,14 @@
 
 Official instructions: https://kiro.dev/docs/cli/installation/
   
-If space under /tmp is not sufficient, run this script to unpack the zip file in $HOME:<br/>
+If space under /tmp is not sufficient, follow these steps to unpack the zip file in $HOME:<br/>
   
-Make sure that you use the ec2-user:
+### Make sure that you use the ec2-user:
 ```
 sudo su - ec2-user
 ```
 
-<br/>Install Kiro CLI without using /tmp:
+### Install Kiro CLI without using /tmp:
 ```
 cat<<EOF>./install-kiro-cli.sh
 #!/bin/bash
@@ -30,4 +30,5 @@ EOF
 chmod u+x ./install-kiro-cli.sh
 ./install-kiro-cli.sh
 ```
-<br/>Next, select "Use with Builder ID", and follow the instructions on the command line.
+
+### Next, select "Use with Builder ID", and follow the instructions on the command line.
