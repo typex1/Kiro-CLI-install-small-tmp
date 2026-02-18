@@ -9,7 +9,7 @@ If space under /tmp is not sufficient, follow these steps to unpack the zip file
 sudo chown -R ssm-user:ssm-user .
 ```
 
-### Install Kiro CLI without using /tmp:
+### Install Kiro CLI without using /tmp, as user "ssm-user":
 ```
 cat<<EOF>./install-kiro-cli.sh
 #!/bin/bash
@@ -42,13 +42,14 @@ chmod u+x ./install-kiro-cli.sh
 ### Next, select "Use with Builder ID", and follow the instructions on the command line.
 
 -----------
+-----------
 
-### Make sure that you use the ec2-user:
+### In case you MUST be "ec2-user", make sure that switch-user to ec2-user:
 ```
 sudo su - ec2-user
 ```
 
-### Install Kiro CLI without using /tmp:
+### Install Kiro CLI without using /tmp, as user "ec2-user":
 ```
 cat<<EOF>./install-kiro-cli.sh
 #!/bin/bash
