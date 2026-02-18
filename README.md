@@ -13,18 +13,24 @@ sudo su - ec2-user
 ```
 cat<<EOF>./install-kiro-cli.sh
 #!/bin/bash
-set -e
+#set -e
+set -x
 
-INSTALL_DIR="\$HOME/.kiro-install-tmp"
-mkdir -p "\$INSTALL_DIR"
+INSTALL_DIR="$HOME/.kiro-install-tmp"
+mkdir -p "$INSTALL_DIR"
 
-export TMPDIR="\$INSTALL_DIR"
-curl -fsSL https://cli.kiro.dev/install | bash
+export TMPDIR="$INSTALL_DIR"
 
-rm -rf "\$INSTALL_DIR"
+if [ -f /etc/system-release ] && grep -q "Amazon Linux release 2" /etc/system-release; then
+    /tmp/curl-new --cacert /etc/pki/tls/certs/ca-bundle.crt -fsSL https://cli.kiro.dev/install | bash
+else
+    /usr/bin/curl -fsSL https://cli.kiro.dev/install | bash
+fi
 
-export PATH="$HOME/.local/bin:$PATH"
-$HOME/.local/bin/kiro-cli login --use-device-flow
+rm -rf "$INSTALL_DIR"
+
+export PATH="/home/ec2-user/.local/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/home/ec2-user/.local/bin:/home/ec2-user/bin"
+/home/ec2-user/.local/bin/kiro-cli login --use-device-flow
 kiro-cli
 EOF
 chmod u+x ./install-kiro-cli.sh
