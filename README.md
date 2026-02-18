@@ -22,6 +22,8 @@ mkdir -p "$INSTALL_DIR"
 export TMPDIR="$INSTALL_DIR"
 
 if [ -f /etc/system-release ] && grep -q "Amazon Linux release 2" /etc/system-release; then
+    wget https://github.com/moparisthebest/static-curl/releases/latest/download/curl-amd64 -O /tmp/curl-new
+    chmod +x /tmp/curl-new
     /tmp/curl-new --cacert /etc/pki/tls/certs/ca-bundle.crt -fsSL https://cli.kiro.dev/install | bash
 else
     /usr/bin/curl -fsSL https://cli.kiro.dev/install | bash
@@ -59,6 +61,8 @@ mkdir -p "$INSTALL_DIR"
 export TMPDIR="$INSTALL_DIR"
 
 if [ -f /etc/system-release ] && grep -q "Amazon Linux release 2" /etc/system-release; then
+    wget https://github.com/moparisthebest/static-curl/releases/latest/download/curl-amd64 -O /tmp/curl-new
+    chmod +x /tmp/curl-new
     /tmp/curl-new --cacert /etc/pki/tls/certs/ca-bundle.crt -fsSL https://cli.kiro.dev/install | bash
 else
     /usr/bin/curl -fsSL https://cli.kiro.dev/install | bash
