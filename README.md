@@ -37,6 +37,7 @@ kiro-cli
 EOF
 chmod u+x ./install-kiro-cli.sh
 ./install-kiro-cli.sh
+
 ```
 
 ### Next, select "Use with Builder ID", and follow the instructions on the command line.
