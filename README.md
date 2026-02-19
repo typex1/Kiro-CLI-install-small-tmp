@@ -6,7 +6,7 @@ If space under /tmp is not sufficient, follow these steps to unpack the zip file
 
 ### In case you are ssm-user, make sure that your home-dir and files are yours:
 ```
-sudo chown -R ssm-user:ssm-user .
+cd && sudo chown -R ssm-user:ssm-user .
 ```
 
 ### Install Kiro CLI without using /tmp, as user "ssm-user":
