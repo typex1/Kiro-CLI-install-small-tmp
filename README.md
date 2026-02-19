@@ -11,10 +11,10 @@ cd && sudo chown -R ssm-user:ssm-user .
 
 ### Install Kiro CLI without using /tmp, as user "ssm-user":
 ```
-cat<<EOF>./install-kiro-cli.sh
+cat<<'EOF'>./install-kiro-cli.sh
 #!/bin/bash
-#set -e
-set -x
+set -e
+#set -x
 
 INSTALL_DIR="$HOME/.kiro-install-tmp"
 mkdir -p "$INSTALL_DIR"
@@ -51,10 +51,10 @@ sudo su - ec2-user
 
 ### Install Kiro CLI without using /tmp, as user "ec2-user":
 ```
-cat<<EOF>./install-kiro-cli.sh
+cat<<'EOF'>./install-kiro-cli.sh
 #!/bin/bash
-#set -e
-set -x
+set -e
+#set -x
 
 INSTALL_DIR="$HOME/.kiro-install-tmp"
 mkdir -p "$INSTALL_DIR"
