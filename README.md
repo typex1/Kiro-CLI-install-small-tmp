@@ -12,6 +12,7 @@ cat > ~/.bashrc << 'EOF'
 export PATH="$HOME/.local/bin:$PATH"
 EOF
 bash
+
 ```
 
 ### Install Kiro CLI without using /tmp, as user "ssm-user":
