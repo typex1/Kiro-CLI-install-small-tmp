@@ -8,9 +8,10 @@ If space under /tmp is not sufficient, follow these steps to unpack the zip file
 ```
 cd && sudo chown -R ssm-user:ssm-user .
 # make "kiro-cli" available through PATH variable:
-cat > ~/.profile << 'EOF'
+cat > ~/.bashrc << 'EOF'
 export PATH="$HOME/.local/bin:$PATH"
 EOF
+bash
 ```
 
 ### Install Kiro CLI without using /tmp, as user "ssm-user":
