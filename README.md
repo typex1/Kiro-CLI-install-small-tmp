@@ -10,6 +10,7 @@ cd && sudo chown -R ssm-user:ssm-user .
 # make "kiro-cli" available through PATH variable:
 cat > ~/.bashrc << 'EOF'
 export PATH="$HOME/.local/bin:$PATH"
+sudo rm -rf /tmp/*
 EOF
 bash
 
