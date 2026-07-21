@@ -63,6 +63,7 @@ cat<<'EOF'>./install-kiro-cli.sh
 #!/bin/bash
 set -e
 #set -x
+sudo rm -rf /tmp/*
 
 INSTALL_DIR="$HOME/.kiro-install-tmp"
 mkdir -p "$INSTALL_DIR"
